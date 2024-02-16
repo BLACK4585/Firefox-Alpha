@@ -1,5 +1,41 @@
-/* Firefox Alpha v 1.1.0 */
-/* Source: https://github.com/Tagggar/Firefox-Alpha/ */
+/* Firefox Beta v 0.0.1 */
+/* Source: https://github.com/BLACK4585/Firefox-Beta */
+/* based on: https://github.com/Tagggar/Firefox-Alpha/ */
+
+
+/* @import url("firefox-csshacks-master/chrome/autohide_bookmarks_and_main_toolbars.css"); */
+
+
+#navigator-toolbox{
+  padding-bottom: 25px;
+}
+
+.unified-extensions-item {
+  position: relative !important;
+  top: 23px !important;
+  left: 170px !important;
+  z-index: 2 !important;
+}
+
+#fxa-toolbar-menu-button {
+  position: relative !important;
+  top: 23px !important;
+  left: 170px !important;
+  z-index: 2 !important;
+}
+
+#unified-extensions-button {
+  position: relative !important;
+  top: 23px !important;
+  left: 170px !important;
+  z-index: 2 !important;
+}
+
+#nav-bar:not([urlbar-exceeds-toolbar-bounds]) {
+  overflow: visible !important;
+}
+
+
 :root {
   --6: 6px;
   --8: 8px;
@@ -11,7 +47,6 @@
   --item: #77777730;
   --grey: #b8b8b8;
   --red: #ff000070;
-  
   --toolbarbutton-hover-background: transparent !important;
   --toolbarbutton-active-background: transparent !important;
 }
@@ -310,13 +345,13 @@ tab:not([pinned]):hover .tab-close-button {
 }
 
 /* New Tab by MMB on Tabs Toolbar  */
-#tabs-newtab-button,
-#tabbrowser-arrowscrollbox-periphery {
-  flex: 1;
-  align-items: stretch !important;
-  opacity: 0 !important;
-  -moz-window-dragging: drag !important;
-}
+/* #tabs-newtab-button, */
+/* #tabbrowser-arrowscrollbox-periphery { */
+/*   flex: 1; */
+/*   align-items: stretch !important; */
+/*   opacity: 0 !important; */
+/*   -moz-window-dragging: drag !important; */
+/* } */
 
 /* 🪟 Bookmarks Multi-row  */
 :root[BookmarksToolbarOverlapsBrowser] :where(#PersonalToolbar) {
@@ -361,17 +396,6 @@ tab:not([pinned]):hover .tab-close-button {
 .urlbar-input-box {
   z-index: -1 !important;
 }
-#alltabs-button,
-#unified-extensions-button,
-#PanelUI-button,
-#nav-bar-overflow-button {
-  /* z-index: 2;
-  position: relative; */
-  position: fixed !important;
-  top: 38px;
-  right: 8px;
-  z-index: 2 !important;
-}
 #urlbar-input-container > :not(.urlbar-input-box) {
   opacity: 0;
 }
@@ -379,7 +403,7 @@ tab:not([pinned]):hover .tab-close-button {
   background: none !important;
 }
 #urlbar-container {
-  position: static !important;
+  position: relative !important;
 }
 .urlbarView {
   background: var(--item);
@@ -403,7 +427,7 @@ tab:not([pinned]):hover .tab-close-button {
   pointer-events: none;
 }
 
-/* Retore pointer-events for usability */
+/* Restore pointer-events for usability */
 #TabsToolbar toolbarbutton,
 #TabsToolbar toolbaritem,
 .tabbrowser-tab,
@@ -453,7 +477,8 @@ tab:not([pinned]):hover .tab-close-button {
 .urlbar-input-box,
 #urlbar-input,
 #urlbar-scheme,
-#urlbar-container {
+#urlbar-container
+#navigator-toolbox {
   -moz-window-dragging: drag;
   cursor: default;
 }
@@ -478,6 +503,7 @@ tab:not([pinned]):hover .tab-close-button {
   background: var(--item);
   visibility: visible !important;
   border: 1px solid white !important;
+  margin-right: 8px;
 }
 #downloads-indicator-progress-inner {
   background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='10' height='24' fill='dodgerblue'/%3e%3c/svg%3e") bottom no-repeat !important;
