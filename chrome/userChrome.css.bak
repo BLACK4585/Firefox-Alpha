@@ -49,13 +49,13 @@ spacer,.titlebar-spacer,
 /* ❌ Tab List */
 #alltabs-button,
 
-/* ❌ Extensions Menu
+/* ❌ Extensions Menu */
 #unified-extensions-button,
 
 /* ❌ #PanelUI-button */
 #PanelUI-menu-button,
 
-/* ❌ Titlebar Window Controls 
+/* ❌ Titlebar Window Controls */
 .titlebar-buttonbox-container,
 
 /* ❌ Navigation Buttons */
@@ -89,7 +89,7 @@ menuitem[disabled], menu[disabled],
 .tab-icon-sound-label,
 .tab-icon-overlay:not([muted]):is([soundplaying]),
 
-/* ❌ Tab Close Btn
+/* ❌ Tab Close Btn */
 .tab-close-button:not([selected]),
 
 /* ❌ Tab Pinned Text */
@@ -365,12 +365,8 @@ tab:not([pinned]):hover .tab-close-button {
 #unified-extensions-button,
 #PanelUI-button,
 #nav-bar-overflow-button {
-  /* z-index: 2;
-  position: relative; */
-  position: fixed !important;
-  top: 38px;
-  right: 8px;
-  z-index: 2 !important;
+  z-index: 2;
+  position: relative;
 }
 #urlbar-input-container > :not(.urlbar-input-box) {
   opacity: 0;
@@ -462,7 +458,7 @@ tab:not([pinned]):hover .tab-close-button {
 #downloads-button {
   position: fixed !important;
   top: 0 !important;
-  right: 140px !important; 
+  right: 0 !important;
   width: var(--tab-min-height);
   z-index: 1;
 }
@@ -470,26 +466,25 @@ tab:not([pinned]):hover .tab-close-button {
   position: fixed !important;
   align-items: end !important;
   top: var(--8) !important;
-  right: 140px !important;
+  right: var(--8) !important;
   left: auto !important;
   width: var(--6) !important;
   height: var(--tab-min-height) !important;
   border-radius: var(--6) !important;
   background: var(--item);
   visibility: visible !important;
-  border: 1px solid white !important;
 }
 #downloads-indicator-progress-inner {
-  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='10' height='24' fill='dodgerblue'/%3e%3c/svg%3e") bottom no-repeat !important;
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='6' height='24' fill='dodgerblue'/%3e%3c/svg%3e") bottom no-repeat !important;
   height: var(--download-progress-pcent) !important;
   border-radius: var(--6) !important;
 }
 #downloads-button[attention="success"] #downloads-indicator-progress-outer {
-  background: lightgreen !important;
+  background: deepskyblue !important;
 }
 #downloads-button:is([attention="warning"], [attention="severe"])
   #downloads-indicator-progress-inner {
-  background: red !important;
+  background: orange !important;
   height: var(--8) !important;
 }
 
@@ -499,8 +494,8 @@ tab:not([pinned]):hover .tab-close-button {
   margin: 4px var(--6) !important;
 }
 #downloadsPanel-mainView {
-  background-color: #2b2a33 !important;
-  color: white;
+  background-color: var(--grey) !important;
+  color: black;
   padding: var(--6) !important;
 }
 #downloadsFooterButtons > button,
@@ -518,14 +513,5 @@ tab:not([pinned]):hover .tab-close-button {
 }
 #downloadsListBox > richlistitem > .downloadMainArea {
   margin-inline-end: var(--8) !important;
-}
-
-/* Search Suggestions Fix*/
-#urlbar-container #urlbar-input-container {
-  opacity: 0;
-}
-.urlbarView {
-  background-color: var(--lwt-accent-color); /* Pop-up background color (adaptive) */
-  color: grey;                               /* Pop-up text color */
 }
 
